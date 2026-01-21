@@ -1,0 +1,11 @@
+title: MoCo Code & Coffee
+#email: admin@mococodeandcoffee.com
+#description: 
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://mococodeandcoffee.com" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Build settings
+theme: minima
+plugins:
+  - jekyll-feed
+
