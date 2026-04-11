@@ -1,0 +1,33 @@
+name: Fetch Meetup Events
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # daily at 6 AM UTC
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+jobs:
+  fetch-events:
+    runs-on: ubuntu-latest
+    # Prevent loops when this action commits updated events
+    if: github.actor != 'github-actions[bot]'
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch Meetup events
+        run: python3 scripts/fetch_events.py
+
+      - name: Commit if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet _data/events.yml; then
+            echo "No changes to events."
+          else
+            git add _data/events.yml
+            git commit -m "chore: update events from Meetup RSS"
+            git push
+          fi

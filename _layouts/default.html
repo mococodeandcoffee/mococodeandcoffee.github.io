@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | default: site.title | escape }}</title>
+  {% include styles.html %}
+</head>
+<body>
+
+{% include nav.html %}
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-card">
+    <img src="{{ '/assets/img/logos/Code-and-Coffee_black-amp_for-web_72ppi.png' | relative_url }}" alt="{{ site.title | escape }}" height="90">
+    <h1>{{ page.hero.title | default: site.title | escape }}</h1>
+    <p>{{ page.hero.subtitle | default: site.description | escape }}</p>
+    <div class="hero-actions">
+      <a href="{{ page.hero.cta_url | default: site.links.meetup }}" target="_blank" rel="noopener" class="btn btn-primary">
+        {{ page.hero.cta_text | default: 'Join on Meetup' }}
+      </a>
+      <a href="/about/" class="btn btn-outline">Learn More</a>
+    </div>
+
+    <div class="hero-events">
+      <div class="section-label">Our Next Event</div>
+      {% if site.data.events and site.data.events.size > 0 %}
+      <div class="event-list">
+        {% for event in site.data.events %}
+        <a href="{{ event.url }}" target="_blank" rel="noopener" class="event-card" aria-label="{{ event.title | escape }}">
+          <div class="event-date-badge">
+            <img src="{{ '/assets/img/coffee.png' | relative_url }}" alt="Coffee">
+          </div>
+          <div class="event-info">
+            <h3>{{ event.title }}</h3>
+          </div>
+          <div class="event-arrow">&#8594;</div>
+        </a>
+        {% endfor %}
+      </div>
+      {% else %}
+      <p class="events-loading">No upcoming events listed yet — check our <a href="{{ site.links.meetup }}">Meetup page</a> for the latest.</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% include footer.html %}
+
+</body>
+</html>

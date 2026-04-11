@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ page.title | escape }} | {{ site.title | escape }}</title>
+  {% include styles.html %}
+</head>
+<body>
+
+{% include nav.html %}
+
+<div class="page-header">
+  <div class="page-header-inner">
+    {% if page.section_label %}<div class="section-label">{{ page.section_label }}</div>{% endif %}
+    <h1>{{ page.title }}</h1>
+    <div class="section-divider"></div>
+  </div>
+</div>
+
+<div class="page-body">
+  {{ content }}
+  {% if page.component == 'about_cards' %}{% include about_cards.html %}
+  {% elsif page.component == 'faq_list' %}{% include faq_list.html %}
+  {% elsif page.component == 'contact_cards' %}{% include contact_cards.html %}
+  {% endif %}
+</div>
+
+{% include footer.html %}
+
+</body>
+</html>

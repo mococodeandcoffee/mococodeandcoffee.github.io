@@ -1,0 +1,9 @@
+<div class="contact-grid">
+  {% for card in site.data.contact %}
+  <div class="contact-card">
+    <div class="icon">{{ card.icon }}</div>
+    <h3>{{ card.title }}</h3>
+    <a href="{{ card.url }}"{% if card.url contains 'http' %} target="_blank" rel="noopener"{% endif %}>{{ card.text }}</a>
+  </div>
+  {% endfor %}
+</div>

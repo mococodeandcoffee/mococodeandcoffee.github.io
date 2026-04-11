@@ -1,0 +1,9 @@
+<div class="about-grid">
+  {% for card in site.data.about_cards %}
+  <div class="about-card">
+    <div class="icon">{{ card.icon }}</div>
+    <h3>{{ card.title }}</h3>
+    <p>{{ card.description }}</p>
+  </div>
+  {% endfor %}
+</div>
