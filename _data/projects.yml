@@ -1,0 +1,9 @@
+# Project Gallery data
+# Required fields: name, author, description
+# Optional fields: image (path or URL), link (URL)
+
+- name: 4tune 4 today
+  author: Inyeong Lee
+  image: /assets/img/projects/4tune4today.png
+  description: A vitual fortune cookie generator, made for fun. Create your own saying and send it to a friend!
+  link: "https://4tune4today.com"
