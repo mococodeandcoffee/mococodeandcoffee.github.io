@@ -27,7 +27,7 @@ Open `_data/projects.yml` and add an entry for your project at the end of the fi
 
 **Required:** `name`, `author`, `description`, `link` (URL to your project or repo), `image` (see step 3)
 
-### 3. Add an image (optional)
+### 3. Add an image
 
 Add a screenshot or logo to `assets/img/projects/` and reference it in your entry:
 
