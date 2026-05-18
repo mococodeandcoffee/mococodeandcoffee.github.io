@@ -21,22 +21,21 @@ Open `_data/projects.yml` and add an entry for your project at the end of the fi
 - name: Your Project Name
   author: Your Name
   description: A short description of what your project does.
-  link: "https://your-project-url.com"   # optional
-  image: /assets/img/projects/your-image.png  # optional
+  link: "https://your-project-url.com"
+  image: /assets/img/projects/your-image.png
 ```
 
-**Required:** `name`, `author`, `description`  
-**Optional:** `link` (URL to your project or repo), `image` (see step 3)
+**Required:** `name`, `author`, `description`, `link` (URL to your project or repo), `image` (see step 3)
 
 ### 3. Add an image (optional)
 
-If you'd like to include a screenshot or logo, add the image file to `assets/img/projects/` and reference it in your entry:
+Add a screenshot or logo to `assets/img/projects/` and reference it in your entry:
 
 ```yaml
 image: /assets/img/projects/your-image.png
 ```
 
-Images work best at a 16:9 ratio. If you skip this, a placeholder will be shown.
+Images work best at a 16:9 ratio.
 
 ### 4. Preview your changes locally
 

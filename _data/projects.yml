@@ -1,6 +1,5 @@
 # Project Gallery data
-# Required fields: name, author, description
-# Optional fields: image (path or URL), link (URL)
+# Required fields: name, author, description, image (path or URL), link (URL)
 
 - name: 4tune 4 today
   author: Inyeong Lee
